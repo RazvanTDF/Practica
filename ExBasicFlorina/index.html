@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universitati dupa oras sau tara</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Cauta Universitati</h1>
+    </header>
+    <main>
+        <section>
+            <form id="university-form">
+                <label for="search-input">Introduceti orasul sau tara:</label>
+                <div class="input-group">
+                    <input type="text" id="search-input" placeholder="Introdu oras sau tara">
+                    <button type="submit">Cauta</button>
+                </div>
+            </form>
+        </section>
+        <section>
+            <table id="universities-table" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>Nume</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    
+    <div id="university-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p><strong>Tara:</strong> <span id="modal-country"></span></p>
+            <p><strong>Website:</strong> <a id="modal-website" href="" target="_blank"></a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
