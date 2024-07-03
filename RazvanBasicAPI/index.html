@@ -3,26 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universitati dupa oras sau tara</title>
+    <title>Univeristati dupa oras sau tara</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Găsește Universități</h1>
+    <h1>Gaseste Universitati</h1>
     <form id="university-form">
-        <input type="text" id="search-input" placeholder="Introdu oraș sau țară">
+        <input type="text" id="search-input" placeholder="Introdu oras sau tara">
         <button type="submit">Cauta</button>
     </form>
     <table id="universities-table" style="display:none;">
         <thead>
             <tr>
                 <th>Nume</th>
-                <th>Tara</th>
-                <th>Website</th>
             </tr>
         </thead>
         <tbody>
         </tbody>
     </table>
+
+    <!-- Modal -->
+    <div id="university-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p><strong>Tara:</strong> <span id="modal-country"></span></p>
+            <p><strong>Website:</strong> <a id="modal-website" href="" target="_blank"></a></p>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
