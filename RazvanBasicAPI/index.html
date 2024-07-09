@@ -1,37 +1,56 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Univeristati dupa oras sau tara</title>
+    <title>Find Universities by City or Country</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Gaseste Universitati</h1>
-    <form id="university-form">
-        <input type="text" id="search-input" placeholder="Introdu oras sau tara">
-        <button type="submit">Cauta</button>
-    </form>
-    <table id="universities-table" style="display:none;">
-        <thead>
-            <tr>
-                <th>Nume</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
+    <div class="container">
+        <h1 class="text-center my-4">Find Universities</h1>
+        <form id="university-form" class="form-inline justify-content-center mb-4">
+            <input type="text" id="search-input" class="form-control mr-2" placeholder="Enter city or country">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        <table id="universities-table" class="table table-striped" style="display:none;">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
 
     <!-- Modal -->
-    <div id="university-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 id="modal-title"></h2>
-            <p><strong>Tara:</strong> <span id="modal-country"></span></p>
-            <p><strong>Website:</strong> <a id="modal-website" href="" target="_blank"></a></p>
+    <div class="modal fade" id="university-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Country:</strong> <span id="modal-country"></span></p>
+                    <p><strong>Website:</strong> <a id="modal-website" href="" target="_blank"></a></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
 
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
