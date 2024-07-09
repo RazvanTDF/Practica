@@ -11,7 +11,7 @@ document.getElementById('university-form').addEventListener('submit', function(e
                 data.forEach(university => {
                     const row = document.createElement('tr');
                     row.innerHTML = `
-                        <td class="university-name">${university.name}</td>
+                        <td class="university-name text-primary" style="cursor: pointer;">${university.name}</td>
                     `;
                     row.addEventListener('click', () => showModal(university));
                     tbody.appendChild(row);
@@ -22,30 +22,18 @@ document.getElementById('university-form').addEventListener('submit', function(e
             }
         })
         .catch(error => {
-            console.error('Eroare:', error);
+            console.error('Error:', error);
         });
 });
 
 function showModal(university) {
-    const modal = document.getElementById('university-modal');
     const modalTitle = document.getElementById('modal-title');
     const modalCountry = document.getElementById('modal-country');
     const modalWebsite = document.getElementById('modal-website');
-
     modalTitle.textContent = university.name;
     modalCountry.textContent = university.country;
     modalWebsite.href = university.web_pages[0];
     modalWebsite.textContent = university.web_pages[0];
 
-    modal.style.display = 'block';
-
-    document.querySelector('.close').onclick = function() {
-        modal.style.display = 'none';
-    };
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
-    };
-} 
+    $('#university-modal').modal('show');
+}
